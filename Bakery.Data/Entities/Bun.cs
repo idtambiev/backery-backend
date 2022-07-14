@@ -10,10 +10,12 @@ namespace Bakery.Data.Entities
     public class Bun
     {
         public int Id { get; set; }
-        public int StartPrice { get; set; }
-        public int CurrentPrice { get; set; }
+        public double StartPrice { get; set; }
+        public double CurrentPrice { get; set; }
+        public int NumberOfHours { get; set; }
         public BunTypes Type { get; set; }
         public DateTime CreatedDate { get; set; }
+        public DateTime SalesDeadline { get; set; }
 
     }
 }

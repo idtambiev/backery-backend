@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Backery.Data\Backery.Data.csproj" />
+    <ProjectReference Include="..\Bakery.Data\Bakery.Data.csproj" />
   </ItemGroup>
 
 </Project>
