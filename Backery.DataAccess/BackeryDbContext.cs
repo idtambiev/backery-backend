@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Bakery.DataAccess
 {
-    public class BakeryDbContext: DbContext
+    public class BackeryDbContext: DbContext
     {
         public DbSet<Bun> Buns { get; set; }
-        public BakeryDbContext(DbContextOptions<BakeryDbContext> options)
+        public BackeryDbContext(DbContextOptions<BackeryDbContext> options)
             : base(options)
         {
 

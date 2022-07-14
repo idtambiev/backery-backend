@@ -9,8 +9,8 @@ namespace Bakery.DataAccess.Repositories
 {
     public class Repository: IRepository
     {
-        public BakeryDbContext Context { get; set; }
-        public Repository(BakeryDbContext context)
+        public BackeryDbContext Context { get; set; }
+        public Repository(BackeryDbContext context)
         {
             Context = context;
         }

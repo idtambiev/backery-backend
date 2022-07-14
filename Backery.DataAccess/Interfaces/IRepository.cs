@@ -8,6 +8,6 @@ namespace Bakery.DataAccess.Interfaces
 {
     public interface IRepository
     {
-        BakeryDbContext Context { get; }
+        BackeryDbContext Context { get; }
     }
 }

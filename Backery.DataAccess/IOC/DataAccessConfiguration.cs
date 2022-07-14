@@ -15,7 +15,7 @@ namespace Bakery.DataAccess.IOC
     {
         public static void Configure(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<BakeryDbContext>(options =>
+            services.AddDbContext<BackeryDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Bakery.DataAccess"))
             );
             services.AddScoped<IRepository, Repository>();
