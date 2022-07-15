@@ -1,3 +1,4 @@
+using Bakery.Api.SignalR;
 using Bakery.Services.IOC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,12 +30,24 @@ namespace Bakery.Api
         {
 
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Bakery.Api", Version = "v1" });
             });
 
             ServicesConfiguration.Configure(services, Configuration);
+            services.AddSignalR();
+            services.AddSingleton<TimerManager>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder => builder
+                        .WithOrigins("http://localhost:4200")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +59,7 @@ namespace Bakery.Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bakery.Api v1"));
             }
+            app.UseCors("CorsPolicy");
 
             app.UseHttpsRedirection();
 
@@ -56,6 +70,12 @@ namespace Bakery.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapHub<BunsHub>("/buns");
             });
         }
     }
