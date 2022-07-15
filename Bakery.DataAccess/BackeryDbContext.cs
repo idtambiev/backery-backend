@@ -24,7 +24,6 @@ namespace Bakery.DataAccess
             builder
                 .ApplyConfiguration(new BunConfiguration());
 
-
         }
     }
 }

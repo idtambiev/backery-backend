@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bakery.Services.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace Bakery.Services.Interfaces
 {
     public interface IBunService
     {
-
+        Task<ResultDto> GetAll(int count);
     }
 }

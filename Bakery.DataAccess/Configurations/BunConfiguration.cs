@@ -13,7 +13,28 @@ namespace Bakery.DataAccess.Configurations
     {
         public void Configure(EntityTypeBuilder<Bun> builder)
         {
+            builder
+                .HasKey(x => x.Id);
 
+            builder
+                .Property(x => x.StartPrice)
+                .IsRequired();
+
+            builder
+                .Property(x => x.CurrentPrice)
+                .IsRequired();
+
+            builder
+                .Property(x => x.SalesDeadline)
+                .IsRequired();
+
+            builder
+                .Property(x => x.NumberOfHours)
+                .IsRequired();
+
+            builder
+                .Property(x => x.CreatedDate)
+                .IsRequired();
         }
     }
 }

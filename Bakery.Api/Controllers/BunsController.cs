@@ -31,11 +31,16 @@ namespace Bakery.Api.Controllers
             return Ok(new { Message = "Request Completed" });
         }
 
-        //[HttpGet]
-        //[Route("create-new-buns")]
-        //public async Task<IActionResult> CreateNewBuns([FromQuery]int count)
-        //{
-        //    return Ok();
-        //}
+        [HttpGet]
+        [Route("create-new-buns")]
+        public async Task<IActionResult> CreateNewBuns([FromQuery] int count)
+        {
+            var result = await _service.GetAll(count);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Message);
+        }
     }
 }
