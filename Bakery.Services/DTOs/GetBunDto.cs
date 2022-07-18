@@ -13,6 +13,7 @@ namespace Bakery.Services.DTOs
         public double StartPrice { get; set; }
         public double CurrentPrice { get; set; }
         public double NextPrice { get; set; }
+        public string Name { get; set; }
         public BunTypes Type { get; set; }
         public DateTime NextDate { get; set; }
         public DateTime CreatedDate { get; set; }

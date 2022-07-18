@@ -106,6 +106,25 @@ namespace Bakery.Services.Services
                     dto.NextDate = bun.SalesDeadline;
                 }
             }
+            switch (dto.Type) 
+            { 
+                case BunTypes.Pretzel:
+                    dto.Name = "Крендель";
+                    break;
+                case BunTypes.Сroissant:
+                    dto.Name = "Круассан";
+                    break;
+                case BunTypes.Baguette:
+                    dto.Name = "Багет";
+                    break;
+                case BunTypes.SourCreamBun:
+                    dto.Name = "Сметанник";
+                    break;
+                case BunTypes.LongLoaf:
+                    dto.Name = "Батон";
+                    break;
+            }
+
 
             return dto;
 
