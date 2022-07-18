@@ -25,9 +25,9 @@ namespace Bakery.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllBuns()
         {
-            var a = new { Hello = "hello" };
+            var result = await _service.GetAll();
             if (!_timer.IsTimerStarted)
-                _timer.PrepareTimer(() => _hub.Clients.All.SendAsync("TransferChartData", a));
+                _timer.PrepareTimer(() => _hub.Clients.All.SendAsync("TransferChartData", result));
             return Ok(new { Message = "Request Completed" });
         }
 
@@ -35,7 +35,7 @@ namespace Bakery.Api.Controllers
         [Route("create-new-buns")]
         public async Task<IActionResult> CreateNewBuns([FromQuery] int count)
         {
-            var result = await _service.GetAll(count);
+            var result = await _service.CreateNewBuns(count);
             if (result.Success)
             {
                 return Ok(result);

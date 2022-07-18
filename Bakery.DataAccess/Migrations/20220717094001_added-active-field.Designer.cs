@@ -4,14 +4,16 @@ using Bakery.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Bakery.DataAccess.Migrations
 {
     [DbContext(typeof(BackeryDbContext))]
-    partial class BackeryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220717094001_added-active-field")]
+    partial class addedactivefield
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,7 +37,7 @@ namespace Bakery.DataAccess.Migrations
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
-                        .HasDefaultValue(true);
+                        .HasDefaultValue(false);
 
                     b.Property<int>("NumberOfHours")
                         .HasColumnType("int");

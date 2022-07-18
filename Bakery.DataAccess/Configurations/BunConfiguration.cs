@@ -35,6 +35,11 @@ namespace Bakery.DataAccess.Configurations
             builder
                 .Property(x => x.CreatedDate)
                 .IsRequired();
+
+            builder
+                .Property(x => x.IsActive)
+                .HasDefaultValue(true)
+                .IsRequired();
         }
     }
 }

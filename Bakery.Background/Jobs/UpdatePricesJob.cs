@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 namespace Bakery.Background.Jobs
 {
+    [DisallowConcurrentExecution]
     public class UpdatePricesJob: IJob
     {
         private readonly IUpdatePricesService _service;
@@ -13,7 +14,7 @@ namespace Bakery.Background.Jobs
         }
         public async Task Execute(IJobExecutionContext context)
         {
-            await _service.Synchronize();
+            await _service.UpdatePrices();
         }
     }
 }

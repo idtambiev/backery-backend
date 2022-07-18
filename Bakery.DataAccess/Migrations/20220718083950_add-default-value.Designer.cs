@@ -4,14 +4,16 @@ using Bakery.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Bakery.DataAccess.Migrations
 {
     [DbContext(typeof(BackeryDbContext))]
-    partial class BackeryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220718083950_add-default-value")]
+    partial class adddefaultvalue
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

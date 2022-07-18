@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Bakery.Background.Configurations
 {
-    public class ServicesConfiguration
+    public static class ServicesConfiguration
     {
         public static IServiceCollection Configure(IServiceCollection services)
         {

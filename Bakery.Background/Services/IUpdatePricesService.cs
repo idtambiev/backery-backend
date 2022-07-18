@@ -4,6 +4,6 @@ namespace Bakery.Background.Services
 {
     public interface IUpdatePricesService
     {
-        Task Synchronize();
+        Task UpdatePrices();
     }
 }

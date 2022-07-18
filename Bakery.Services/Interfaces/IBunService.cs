@@ -9,6 +9,7 @@ namespace Bakery.Services.Interfaces
 {
     public interface IBunService
     {
-        Task<ResultDto> GetAll(int count);
+        Task<List<GetBunDto>> GetAll();
+        Task<ResultDto> CreateNewBuns(int count);
     }
 }

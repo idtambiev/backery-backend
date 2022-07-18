@@ -5,18 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bakery.Data.Entities
+namespace Bakery.Services.DTOs
 {
-    public class Bun
+    public class GetBunDto
     {
         public int Id { get; set; }
         public double StartPrice { get; set; }
         public double CurrentPrice { get; set; }
-        public int NumberOfHours { get; set; }
+        public double NextPrice { get; set; }
         public BunTypes Type { get; set; }
+        public DateTime NextDate { get; set; }
         public DateTime CreatedDate { get; set; }
-        public DateTime SalesDeadline { get; set; }
-        public bool IsActive { get; set; }
-
     }
 }

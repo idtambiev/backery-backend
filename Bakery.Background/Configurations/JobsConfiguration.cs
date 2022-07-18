@@ -7,7 +7,7 @@ using Quartz.Spi;
 
 namespace Bakery.Background.Configurations
 {
-    public class JobsConfiguration
+    public static class JobsConfiguration
     {
         public static IServiceCollection Configure(IServiceCollection services)
         {
